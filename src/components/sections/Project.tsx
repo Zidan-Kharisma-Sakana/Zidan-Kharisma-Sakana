@@ -1,0 +1,155 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import ProjectCard from '../ui/ProjectCard';
+import { Project } from '../../types';
+
+// Sample project data - replace with your actual projects
+const projectsData: Project[] = [
+  {
+      id: 'project1',
+      title: 'E-commerce Dashboard',
+      description: 'A responsive dashboard with real-time data visualization and dark mode support.',
+      image: '/assets/images/project1.jpg', // Replace with your image
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
+      demoUrl: 'https://example.com/demo',
+      codeUrl: 'https://github.com/yourusername/project',
+      bullets: []
+  },
+  {
+      id: 'project2',
+      title: 'Social Media App',
+      description: 'Full-stack social platform with real-time chat and notifications.',
+      image: '/assets/images/project2.jpg', // Replace with your image
+      tags: ['Next.js', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
+      demoUrl: 'https://example.com/demo',
+      codeUrl: 'https://github.com/yourusername/project',
+      bullets: []
+  },
+  {
+      id: 'project3',
+      title: 'Travel Booking Platform',
+      description: 'Interactive travel booking site with 3D globe visualization and animations.',
+      image: '/assets/images/project3.jpg', // Replace with your image
+      tags: ['React', 'Three.js', 'GSAP', 'Styled Components'],
+      demoUrl: 'https://example.com/demo',
+      codeUrl: 'https://github.com/yourusername/project',
+      bullets: []
+  },
+  {
+      id: 'project4',
+      title: 'Restaurant Ordering System',
+      description: 'Mobile-first restaurant ordering system with slick animations and payment integration.',
+      image: '/assets/images/project4.jpg', // Replace with your image
+      tags: ['React Native', 'Redux', 'Stripe', 'Firebase'],
+      demoUrl: 'https://example.com/demo',
+      codeUrl: 'https://github.com/yourusername/project',
+      bullets: []
+  }
+];
+
+// Filter categories
+const categories: string[] = ['All', 'React', 'Next.js', 'TypeScript', 'Mobile', 'UI/UX'];
+
+const Projects: React.FC = () => {
+  const [filter, setFilter] = useState<string>('All');
+  
+  // Filter projects based on selected category
+  const filteredProjects = filter === 'All' 
+    ? projectsData 
+    : projectsData.filter(project => project.tags.includes(filter));
+  
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }
+    }
+  };
+
+  return (
+    <section id="projects" className="section bg-light-dark">
+      <div className="container-custom">
+        <motion.div
+          className="text-center mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headerVariants}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">My <span className="text-gradient">Projects</span></h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Showcasing my expertise in creating interactive and visually stunning web experiences.
+          </p>
+        </motion.div>
+        
+        {/* Filter tabs */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-2 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                filter === category
+                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+              onClick={() => setFilter(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </motion.div>
+        
+        {/* Projects grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </motion.div>
+        
+        {/* Show more button */}
+        {filter === 'All' && projectsData.length > 6 && (
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <button className="btn-outline">
+              View More Projects
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

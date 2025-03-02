@@ -8,22 +8,28 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "prepare": "husky",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tailwind-init": "tailwindcss init -p"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.2",
     "@react-three/fiber": "^9.0.4",
+    "@tailwindcss/cli": "^4.0.9",
+    "@tailwindcss/vite": "^4.0.9",
     "framer-motion": "^12.4.7",
     "gsap": "^3.12.7",
     "locomotive-scroll": "^4.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.15.1",
     "react-router-dom": "^7.2.0",
-    "tailwindcss": "^4.0.8",
+    "tailwindcss": "^4.0.9",
     "three": "^0.173.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.8",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
