@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# 👋 Hi there, I'm Zidan!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💻 Fullstack Developer & 🚀 DevOps Enthusiast
 
-Currently, two official plugins are available:
+### 🌐 [Check out my portfolio: zidan.fyi](https://zidan.fyi)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I'm a versatile developer with 2 years of experience, currently employed at CIMB Niaga as a Fullstack Developer with growing DevOps responsibilities. While I'm happily employed and thriving in my current role, I'm always keeping my eyes open for exciting new opportunities and challenges that can help me expand my horizons! 
 
-## Expanding the ESLint configuration
+### 🛠️ Technical Arsenal
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+🎨 Frontend: React and its powerful ecosystem
+⚙️ Backend: Java Spring, Go, Node.js (Nest.js, Express), PHP (Laravel)
+☁️ Cloud: Google Cloud Platform (Certified Associate Cloud Engineer)
+🔄 CI/CD: Learning Jenkins and modern deployment workflows
+🐳 Containers: Exploring Kubernetes and container orchestration
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 📊 Experience & Expertise
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- 💼 **CIMB Niaga**: Working as a Fullstack Developer with additional DevOps responsibilities
+- 🔍 **Problem Solver**: Tackling complex challenges with elegant solutions
+- 🧩 **Adaptable**: Comfortable switching between different languages and frameworks
+- 🌐 **Full Stack**: Designing end-to-end solutions from user interface to backend services
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 🌱 Currently Exploring & Learning
+
+I'm deeply immersed in expanding my knowledge in the DevOps and infrastructure space:
+- 🔄 **Jenkins**: Building robust CI/CD pipelines for automated testing and deployment
+- 🚢 **Kubernetes**: Orchestrating containers for scalable and resilient applications
+- ☁️ **AWS**: Leveraging cloud services for optimized infrastructure
+- 🏗️ **Infrastructure as Code**: Treating infrastructure with the same rigor as application code
+
+### 🏆 Certifications
+
+- 🎓 **Google Cloud Associate Cloud Engineer (ACE)**: Validated expertise in managing Google Cloud resources and services
+
+### 💭 My Development Philosophy
+
+> "The developer's journey is about transforming the impossible into the intuitive—not by adding complexity, but by wrestling with it until simplicity naturally emerges."
+
+I believe that great code isn't just about making things work—it's about creating solutions that are maintainable, scalable, and elegant in their simplicity.
+
+### 🧠 Learning Approach
+
+- 📚 Continuous self-improvement through hands-on projects
+- 🔄 Embracing new technologies while mastering fundamentals
+- 🧪 Experimenting with different approaches to find optimal solutions
+- 🤝 Learning from and collaborating with fellow developers
+
+### 👤 About Me
+
+- 🤓 An introverted people-person who values meaningful connections
+- 📖 Avid reader of manga & manhwa in my free time
+- 🌟 Passionate about technology that makes a difference
+- 🧩 Problem-solver by nature, both in code and life
+- 🔍 Detail-oriented and quality-focused
+
+### 📫 Get in Touch
+
+Feel free to reach out if you'd like to collaborate, discuss tech, or just connect:
+- 🌐 **Portfolio**: [zidan.fyi](https://zidan.fyi)
+- ✉️ **Email**: zidankharismaadidarma@gmail.com
+- 💬 **GitHub**: You're already here! Feel free to explore my repositories and contributions
+
+---
+
+*"Code like poetry, deploy like clockwork." ✨*
