@@ -21,6 +21,14 @@ const projectsData: Project[] = [
       tags: ['Express JS', 'GCP', 'DevOps', 'CI/CD'],
       codeUrl: 'https://github.com/Karira-Capstone',
   },
+  {
+    id: 'spo',
+    title: 'Pengaduan BAPPEBTI',
+    description: 'Revamping a legacy system of an online conflict resolution system in BAPPEBTI. Create Auth Mechanism, Application Form, Dashboard, and multiple other improvements',
+    image: '/projects/spo.png', 
+    tags: ['Laravel', 'MySql', 'Apache Web Server'],
+    codeUrl: 'https://github.com/Zidan-Kharisma-Sakana/conflict-resolution',
+},
 ];
 
 // Filter categories

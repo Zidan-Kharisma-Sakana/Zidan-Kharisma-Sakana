@@ -131,12 +131,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-3">
           {project.tags.map((tag:string, index:number) => (
-            <span 
+            <div 
               key={index}
-              className="text-xs px-2 py-1 rounded-full bg-primary/20 text-white backdrop-blur-sm"
+              className="text-xs px-2 py-1 rounded-full text-white bg-gray-600/50 backdrop-blur-md shadow-md"
             >
               {tag}
-            </span>
+            </div>
           ))}
         </div>
         
