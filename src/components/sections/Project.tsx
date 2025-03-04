@@ -63,7 +63,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="section bg-light-dark">
+    <section id="projects" className="section">
       <div className="container-custom">
         <motion.div
           className="text-center mb-12"
@@ -73,9 +73,6 @@ const Projects: React.FC = () => {
           variants={headerVariants}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3">My <span className="text-gradient">Projects</span></h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Showcasing my expertise in creating interactive and visually stunning web experiences.
-          </p>
         </motion.div>
         
         {/* Filter tabs */}
@@ -89,10 +86,10 @@ const Projects: React.FC = () => {
           {categories.map((category) => (
             <button
               key={category}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
                 filter === category
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  ? 'text-misty-rose shadow-lg'
+                  : 'bg-light-rose text-deep-coffe hover:bg-wine-berry hover:text-misty-rose'
               }`}
               onClick={() => setFilter(category)}
             >

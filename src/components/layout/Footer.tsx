@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
 
     return (
         <motion.footer
-            className="py-12 bg-light-dark"
+            className="py-12"
             variants={footerVariants}
             initial="hidden"
             whileInView="visible"
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
                             {['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'Responsive Design', 'UI/UX'].map((skill) => (
                                 <span
                                     key={skill}
-                                    className="px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-700"
+                                    className="px-3 py-1 rounded-full text-xs font-medium bg-boysenberry text-misty-rose"
                                 >
                                     {skill}
                                 </span>

@@ -8,7 +8,7 @@ const NotFound: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-light p-4">
+    <div className="flex items-center justify-center min-h-screen p-4">
       <motion.div 
         className="text-center max-w-lg"
         initial={{ opacity: 0, y: 20 }}

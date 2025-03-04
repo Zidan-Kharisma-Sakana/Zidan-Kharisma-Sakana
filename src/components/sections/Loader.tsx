@@ -15,7 +15,7 @@ const Loader: React.FC = () => {
     };
     return (<motion.div
         key="loader"
-        className="fixed inset-0 flex items-center justify-center bg-light"
+        className="fixed inset-0 flex items-center justify-center"
         variants={loadingVariants}
         initial="hidden"
         animate="visible"

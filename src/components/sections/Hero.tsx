@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
           <motion.h2 
             custom={0}
             variants={textVariants}
-            className="text-lg md:text-xl font-medium text-secondary mb-2"
+            className="text-lg md:text-xl font-medium text-boysenberry mb-2"
           >
             Welcome to my portfolio
           </motion.h2>
@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
           <motion.h1 
             custom={1}
             variants={textVariants}
-            className="text-4xl md:text-7xl font-bold text-gradient mb-6"
+            className="text-4xl md:text-7xl font-bold text-wine-berry mb-6"
           >
             Frontend Developer
           </motion.h1>
@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
           <motion.p 
             custom={2}
             variants={textVariants}
-            className="text-lg md:text-xl mb-10 text-balance text-gray-700"
+            className="text-lg md:text-xl mb-10 text-deep-coffe"
           >
             Building beautiful, interactive, and high-performance web experiences
           </motion.p>

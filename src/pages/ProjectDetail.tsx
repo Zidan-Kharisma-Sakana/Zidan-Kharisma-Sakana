@@ -115,7 +115,7 @@ const ProjectDetail: React.FC = () => {
     };
 
     return (
-        <div className="pt-20 pb-16 bg-light min-h-screen">
+        <div className="pt-20 pb-16  min-h-screen">
             <div className="container-custom">
                 {/* Back button */}
                 <motion.button
@@ -253,7 +253,7 @@ const ProjectDetail: React.FC = () => {
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="space-y-6">
-                            <div className="p-6 rounded-xl bg-light-dark shadow-md">
+                            <div className="p-6 rounded-xl -dark shadow-md">
                                 <h2 className="text-xl font-bold mb-4">Project Info</h2>
 
                                 <div className="space-y-4">
