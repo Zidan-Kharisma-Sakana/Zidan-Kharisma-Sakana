@@ -107,7 +107,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
       
       {/* Shine Effect on hover */}
       {isHovered && (
@@ -145,20 +145,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.title}
         </h3>
         
-        {/* Description */}
-        <motion.p 
-          className="text-sm text-gray-300 mb-4"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ 
-            opacity: isHovered ? 1 : 0, 
-            y: isHovered ? 0 : 10 
-          }}
-          transition={{ duration: 0.3 }}
-        >
+        <motion.p className="text-sm text-gray-300 mb-4">
           {project.description}
         </motion.p>
         
-        {/* Links */}
         <div className="flex gap-3 items-center">
           {project.demoUrl && (
             <a 
@@ -167,7 +157,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               rel="noopener noreferrer"
               className="text-white hover:text-primary text-sm font-medium flex items-center transition-colors"
             >
-              <span>Live Demo</span>
+              <span>View Demo</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>

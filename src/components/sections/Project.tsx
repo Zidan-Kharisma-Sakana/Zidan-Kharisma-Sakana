@@ -3,52 +3,28 @@ import { motion } from 'framer-motion';
 import ProjectCard from '../ui/ProjectCard';
 import { Project } from '../../types';
 
-// Sample project data - replace with your actual projects
 const projectsData: Project[] = [
   {
-      id: 'project1',
-      title: 'E-commerce Dashboard',
-      description: 'A responsive dashboard with real-time data visualization and dark mode support.',
-      image: '/assets/images/project1.jpg', // Replace with your image
-      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
-      demoUrl: 'https://example.com/demo',
-      codeUrl: 'https://github.com/yourusername/project',
-      bullets: []
+      id: 'e3ws',
+      title: 'Eearthquake Early Warning System',
+      description: 'System to detect p-wave of earthquake using ML with real-time data. Architected with Event-Driven System and Scalability in mind using Kafka and Docker',
+      image: '/projects/e3ws.png',
+      tags: ['Go', 'Python', 'Kafka', 'React'],
+      demoUrl: 'https://www.youtube.com/watch?v=KL9jZ7Uj_ZE',
+      codeUrl: 'https://github.com/distributed-eews/eews',
   },
   {
-      id: 'project2',
-      title: 'Social Media App',
-      description: 'Full-stack social platform with real-time chat and notifications.',
-      image: '/assets/images/project2.jpg', // Replace with your image
-      tags: ['Next.js', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
-      demoUrl: 'https://example.com/demo',
-      codeUrl: 'https://github.com/yourusername/project',
-      bullets: []
+      id: 'karira',
+      title: 'Karira',
+      description: 'Freelance Marketplace Android Application for Bangkit Capstone. Powered by AI for recommendation engine and budget estimation',
+      image: '/projects/karira.png', 
+      tags: ['Express JS', 'GCP', 'DevOps', 'CI/CD'],
+      codeUrl: 'https://github.com/Karira-Capstone',
   },
-  {
-      id: 'project3',
-      title: 'Travel Booking Platform',
-      description: 'Interactive travel booking site with 3D globe visualization and animations.',
-      image: '/assets/images/project3.jpg', // Replace with your image
-      tags: ['React', 'Three.js', 'GSAP', 'Styled Components'],
-      demoUrl: 'https://example.com/demo',
-      codeUrl: 'https://github.com/yourusername/project',
-      bullets: []
-  },
-  {
-      id: 'project4',
-      title: 'Restaurant Ordering System',
-      description: 'Mobile-first restaurant ordering system with slick animations and payment integration.',
-      image: '/assets/images/project4.jpg', // Replace with your image
-      tags: ['React Native', 'Redux', 'Stripe', 'Firebase'],
-      demoUrl: 'https://example.com/demo',
-      codeUrl: 'https://github.com/yourusername/project',
-      bullets: []
-  }
 ];
 
 // Filter categories
-const categories: string[] = ['All', 'React', 'Next.js', 'TypeScript', 'Mobile', 'UI/UX'];
+const categories: string[] = ['All', 'React', 'Go', 'Kafka', 'DevOps'];
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('All');

@@ -2,7 +2,6 @@ export interface Project {
     id: string;
     title: string;
     description: string;
-    bullets: string[];
     image: string;
     tags: string[];
     demoUrl?: string;
