@@ -107,7 +107,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+      <div style={{
+        background: "linear-gradient(0deg, rgba(86,33,53,1) 0%, rgba(150,117,130,1) 40%, transparent 100%)"
+      }} 
+      className="absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
       
       {/* Shine Effect on hover */}
       {isHovered && (
@@ -133,7 +136,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.tags.map((tag:string, index:number) => (
             <div 
               key={index}
-              className="text-xs px-2 py-1 rounded-full text-white bg-gray-600/50 backdrop-blur-md shadow-md"
+              className="text-xs px-2 py-1 rounded-full text-white bg-boysenberry/70 backdrop-blur-md shadow-md"
             >
               {tag}
             </div>
@@ -145,7 +148,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.title}
         </h3>
         
-        <motion.p className="text-sm text-gray-300 mb-4">
+        <motion.p className="text-sm text-white mb-4">
           {project.description}
         </motion.p>
         
