@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
+
 import gsap from 'gsap';
 
 const Hero: React.FC = () => {
@@ -13,7 +15,7 @@ const Hero: React.FC = () => {
 
     // Create a timeline for sequenced animations
     const tl = gsap.timeline();
-    
+
     // Animate the circle
     if (circleRef.current) {
       tl.fromTo(
@@ -27,27 +29,27 @@ const Hero: React.FC = () => {
     const particles = heroRef.current.querySelectorAll('.particle');
     gsap.fromTo(
       particles,
-      { 
+      {
         y: () => Math.random() * 100 - 50,
-        opacity: 0 
+        opacity: 0
       },
-      { 
+      {
         y: 0,
-        opacity: 0.7, 
-        duration: 1.5, 
+        opacity: 0.7,
+        duration: 1.5,
         stagger: 0.1,
-        ease: "power3.out" 
+        ease: "power3.out"
       }
     );
 
     // Initialize mouse movement effect for parallax
     const handleMouseMove = (e: MouseEvent): void => {
       if (!circleRef.current) return;
-      
+
       const { clientX, clientY } = e;
       const x = (clientX / window.innerWidth - 0.5) * 20;
       const y = (clientY / window.innerHeight - 0.5) * 20;
-      
+
       gsap.to(circleRef.current, {
         x: x * -1,
         y: y * -1,
@@ -66,7 +68,7 @@ const Hero: React.FC = () => {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -91,10 +93,10 @@ const Hero: React.FC = () => {
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div ref={circleRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] bg-gradient-radial from-primary-light/30 to-transparent rounded-full blur-3xl"></div>
-        
+
         {/* Create background particles */}
         {[...Array(10)].map((_, i) => (
-          <div 
+          <div
             key={i}
             className="particle absolute rounded-full opacity-20 blur-sm"
             style={{
@@ -116,30 +118,54 @@ const Hero: React.FC = () => {
           animate="visible"
           className="max-w-3xl mx-auto"
         >
-          <motion.h2 
+          <motion.h2
             custom={0}
             variants={textVariants}
             className="text-lg md:text-xl font-medium text-boysenberry mb-2"
           >
-            Welcome to my portfolio
+            <TypeAnimation
+              sequence={[
+                "Hello there! Welcome!",
+                1000,
+                "Hello there! I'm Zidan Kharisma Adidarma",
+                4000
+              ]}
+              wrapper='span'
+              speed={50}
+              repeat={0}
+            />
           </motion.h2>
-          
-          <motion.h1 
+
+          <motion.h1
             custom={1}
             variants={textVariants}
             className="text-4xl md:text-7xl font-bold text-wine-berry mb-6"
           >
-            Frontend Developer
+            Fullstack Engineer & DevOps Enthusiast
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             custom={2}
             variants={textVariants}
             className="text-lg md:text-xl mb-10 text-deep-coffe"
           >
-            Building beautiful, interactive, and high-performance web experiences
+            <TypeAnimation
+              sequence={[
+                "Creating Scalable & High Performance System with Go",
+                2500,
+                "Building Enterprise Grade Application with Java",
+                2500,
+                "Crafting Modular & Captivating Website with React",
+                2500,
+                "Deploying for Zero Downtime with CI/CD & Kubernetes",
+                2500
+              ]}
+              speed={40}
+              deletionSpeed={99}
+              repeat={Infinity}
+            />
           </motion.p>
-          
+
           <motion.div
             custom={3}
             variants={textVariants}
@@ -156,12 +182,12 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ 
-          opacity: [0, 1, 0], 
-          y: [0, 10, 0] 
+        animate={{
+          opacity: [0, 1, 0],
+          y: [0, 10, 0]
         }}
         transition={{
           duration: 1.5,

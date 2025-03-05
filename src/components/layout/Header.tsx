@@ -67,7 +67,7 @@ const Header: React.FC = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-8 ${isMobileMenuOpen
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isMobileMenuOpen
         ? 'bg-flamingo-pink/90 shadow-md' : 'bg-flamingo-pink/80'}`}
       variants={headerVariants}
       initial="initial"
