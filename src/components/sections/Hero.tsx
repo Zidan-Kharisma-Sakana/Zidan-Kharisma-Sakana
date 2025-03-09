@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           <motion.h1
             custom={1}
             variants={textVariants}
-            className="italic grid grid-cols-1 text-6xl lg:text-7xl text-wine-berry my-6 w-fit mx-auto"
+            className="italic grid grid-cols-1 text-5xl lg:text-7xl text-wine-berry my-6 w-fit mx-auto"
           >
             <p className='font-bold text-2xl text-boysenberry'>I'M A</p>
             <div className='hidden md:block heading-container'>
