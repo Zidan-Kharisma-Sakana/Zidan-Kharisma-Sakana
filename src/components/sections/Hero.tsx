@@ -1,78 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
-import gsap from 'gsap';
-
 const Hero: React.FC = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const circleRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-
-  // GSAP animation for background elements
-  useEffect(() => {
-    if (!heroRef.current) return;
-
-    // Create a timeline for sequenced animations
-    const tl = gsap.timeline();
-
-    // Animate the circle
-    if (circleRef.current) {
-      tl.fromTo(
-        circleRef.current,
-        { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 0.8, duration: 1.5, ease: "elastic.out(1, 0.5)" }
-      );
-    }
-
-    // Animate background particles
-    const particles = heroRef.current.querySelectorAll('.particle');
-    gsap.fromTo(
-      particles,
-      {
-        y: () => Math.random() * 100 - 50,
-        opacity: 0
-      },
-      {
-        y: 0,
-        opacity: 0.7,
-        duration: 1.5,
-        stagger: 0.1,
-        ease: "power3.out"
-      }
-    );
-
-    // Initialize mouse movement effect for parallax
-    const handleMouseMove = (e: MouseEvent): void => {
-      if (!circleRef.current) return;
-
-      const { clientX, clientY } = e;
-      const x = (clientX / window.innerWidth - 0.5) * 20;
-      const y = (clientY / window.innerHeight - 0.5) * 20;
-
-      gsap.to(circleRef.current, {
-        x: x * -1,
-        y: y * -1,
-        duration: 1,
-        ease: "power2.out"
-      });
-
-      particles.forEach((particle, i) => {
-        gsap.to(particle, {
-          x: x * (i % 3 + 1) * -0.5,
-          y: y * ((i % 2) + 1) * -0.5,
-          duration: 1,
-          ease: "power2.out"
-        });
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   // Text animation variants for Framer Motion
   const textVariants = {
@@ -89,34 +19,12 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div ref={circleRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] bg-gradient-radial from-primary-light/30 to-transparent rounded-full blur-3xl"></div>
-
-        {/* Create background particles */}
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="particle absolute rounded-full opacity-20 blur-sm"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 10 + 5}px`,
-              height: `${Math.random() * 10 + 5}px`,
-              backgroundColor: i % 2 === 0 ? '#6366f1' : '#f97316'
-            }}
-          ></div>
-        ))}
-      </div>
-
-      {/* Content layer */}
-      <div className="container-custom relative z-10 text-center px-4">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className="container-custom relative z-10 text-center px-4 w-full">
         <motion.div
-          ref={textRef}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <motion.h2
             custom={0}
@@ -127,38 +35,51 @@ const Hero: React.FC = () => {
               sequence={[
                 "Hello there! Welcome!",
                 1000,
-                "Hello there! I'm Zidan Kharisma Adidarma",
+                "Hello there! My Name is Zidan",
                 4000
               ]}
               wrapper='span'
               speed={50}
               repeat={0}
+              cursor={false}
             />
           </motion.h2>
 
           <motion.h1
             custom={1}
             variants={textVariants}
-            className="text-4xl md:text-7xl font-bold text-wine-berry mb-6"
+            className="italic grid grid-cols-1 text-6xl lg:text-7xl text-wine-berry my-6 w-fit mx-auto"
           >
-            Fullstack Engineer & DevOps Enthusiast
+            <p className='font-bold text-2xl text-boysenberry'>I'M A</p>
+            <div className='hidden md:block heading-container'>
+              <h1 className='heading-background'>FULLSTACK ENGINEER</h1>
+              <h1 className='heading-clipped'>FULLSTACK ENGINEER</h1>
+            </div>
+            <div className='heading-container text-center md:hidden'>
+              <h1 className='heading-background left-1/2 -translate-x-1/2'>FULLSTACK</h1>
+              <h1 className='heading-clipped'>FULLSTACK</h1>
+            </div>
+            <div className='heading-container text-center md:hidden'>
+              <h1 className='heading-background left-1/2 -translate-x-1/2'>ENGINEER</h1>
+              <h1 className='heading-clipped'>ENGINEER</h1>
+            </div>
           </motion.h1>
 
           <motion.p
             custom={2}
             variants={textVariants}
-            className="text-lg md:text-xl mb-10 text-deep-coffe"
+            className="text-base md:text-xl text-deep-coffe max-w-3/4 mx-auto h-20 mb-6"
           >
             <TypeAnimation
               sequence={[
-                "Creating Scalable & High Performance System with Go",
-                2500,
-                "Building Enterprise Grade Application with Java",
-                2500,
-                "Crafting Modular & Captivating Website with React",
-                2500,
-                "Deploying for Zero Downtime with CI/CD & Kubernetes",
-                2500
+                "Creating High Performance Systems with Go",
+                4000,
+                "Building Enterprise Applications with Java",
+                4000,
+                "Crafting Captivating Websites with React",
+                4000,
+                "Automating Kubernetes Deployment with CI/CD ",
+                4000
               ]}
               speed={40}
               deletionSpeed={99}

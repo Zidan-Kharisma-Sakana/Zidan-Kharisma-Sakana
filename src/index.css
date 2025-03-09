@@ -18,6 +18,7 @@
   --color-deep-coffe: #704041;
   --color-ice-cold: #adf2f1;
   --color-boysenberry: #90335d;
+  --color-bashful-pink: #b85b85;
   --color-pale-turquoise: #9bfdce;
 
   --color-red-violet: #cc0099;
@@ -80,5 +81,41 @@ body {
   }
   a:hover {
     text-decoration: underline;
+  }
+}
+
+.heading-container {
+  position: relative;
+  font-weight: bold;
+  font-weight: 900;
+}
+
+.heading-container .heading-background {
+  position: absolute;
+  padding: 0.5rem;
+  background: linear-gradient(
+    180deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0) 55%, 
+    var(--color-bashful-pink) 55%, 
+    var(--color-bashful-pink) 100%
+  );
+  color: var(--color-misty-rose);
+}
+
+.heading-container .heading-clipped {
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--color-bashful-pink);
+  animation: clipPathRise 3s ease-out forwards;
+}
+
+@keyframes clipPathRise {
+  0%{
+    clip-path: inset(-1% -1% 0% -1%);
+  }
+
+  100%{
+    clip-path: inset(-1% -1% 45% -1%);
   }
 }
