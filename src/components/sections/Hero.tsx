@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import { SectionWrapper } from '../../hoc/SectionWrapper';
 
 const Hero: React.FC = () => {
 
@@ -19,7 +20,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <SectionWrapper idName='home' className="h-screen flex items-center justify-center overflow-hidden">
       <div className="container-custom relative z-10 text-center px-4 w-full">
         <motion.div
           initial="hidden"
@@ -104,7 +105,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 text-bashful-pink"
         initial={{ opacity: 0, y: -20 }}
         animate={{
           opacity: [0, 1, 0],
@@ -116,11 +117,11 @@ const Hero: React.FC = () => {
           repeatType: "loop"
         }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </motion.div>
-    </section>
+    </SectionWrapper>
   );
 };
 
