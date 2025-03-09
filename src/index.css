@@ -13,7 +13,7 @@
   --color-soft-peach: #ffebeb;
   --color-salmon-pink: #ff8080;
   --color-tea-green: #d0eed5;
-  --color-flamingo-pink: 	#ffa6be;
+  --color-flamingo-pink: #ffa6be;
 
   --color-deep-coffe: #704041;
   --color-ice-cold: #adf2f1;
@@ -36,12 +36,10 @@
   font-weight: 400;
 
   background: var(--color-flamingo-pink);
-  background: linear-gradient(
-    180deg, 
-    var(--color-flamingo-pink) 0%, 
-    var(--color-misty-rose) 50%, 
-    var(--color-pastel-pink) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--color-flamingo-pink) 0%,
+      var(--color-misty-rose) 50%,
+      var(--color-pastel-pink) 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -70,7 +68,7 @@ body {
     cursor: pointer;
     transition: border-color 0.25s;
   }
-  
+
   button:hover {
     border-color: var(--color-boysenberry);
   }
@@ -80,6 +78,7 @@ body {
     color: var(--color-wine-berry);
     text-decoration: inherit;
   }
+
   a:hover {
     text-decoration: underline;
   }
@@ -94,13 +93,11 @@ body {
 .heading-container .heading-background {
   position: absolute;
   padding: 0.5rem;
-  background: linear-gradient(
-    180deg, 
-    rgba(255,255,255,0) 0%, 
-    rgba(255,255,255,0) 55%, 
-    var(--color-bashful-pink) 55%, 
-    var(--color-bashful-pink) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 55%,
+      var(--color-bashful-pink) 55%,
+      var(--color-bashful-pink) 100%);
   color: var(--color-misty-rose);
 }
 
@@ -112,11 +109,49 @@ body {
 }
 
 @keyframes clipPathRise {
-  0%{
+  0% {
     clip-path: inset(-1% -1% 0% -1%);
   }
 
-  100%{
+  100% {
     clip-path: inset(-1% -1% 45% -1%);
+  }
+}
+
+@media (min-width: 768px){
+  .work-photo::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 288px;
+    height: 162px;
+    top: calc(50% - 60px);
+    left: calc(50% - 120px);
+    transition: all 0.3s ease;
+    background: repeating-linear-gradient(45deg,
+        var(--color-bashful-pink),
+        var(--color-bashful-pink) 2px,
+        transparent 2px,
+        transparent 6px);
+  }
+
+  .work-photo:hover::before {
+    top: calc(50% - 40px);
+    left: calc(50% - 100px);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .work-photo::before {
+    width: 400px;
+    height: 224px;
+    top: calc(50% - 90px);
+    left: calc(50% - 180px);
+  }
+
+  .work-photo:hover::before {
+    top: calc(50% - 50px);
+    left: calc(50% - 160px);
   }
 }

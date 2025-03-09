@@ -54,27 +54,8 @@ const Projects: React.FC = () => {
     }
   };
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }
-    }
-  };
-
   return (
-    <SectionWrapper idName="projects">
-      <motion.div
-        className="text-center mb-12"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={headerVariants}
-      >
-        <h2 className="text-3xl md:text-4xl font-bold mb-3">My <span className="text-gradient">Projects</span></h2>
-      </motion.div>
-
+    <SectionWrapper idName="projects" title='My Projects'>
       {/* Filter tabs */}
       <motion.div
         className="flex flex-wrap justify-center gap-2 mb-12"

@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Hero from '../components/sections/Hero';
 import Projects from '../components/sections/Project';
+import WorkExperiences from '../components/sections/Work';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +55,7 @@ const HomePage: React.FC = () => {
       <Hero />
       {/* <About /> */}
       {/* <Experience /> */}
+      <WorkExperiences />
       {/* <Skills /> */}
       {/* Projects Section */}
       <Projects />
